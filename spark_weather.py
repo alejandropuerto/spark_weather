@@ -47,4 +47,5 @@ weather['Mean.TemperatureF'] = weather['Mean.TemperatureF'].astype(int)
 weather['Min.TemperatureF'] = weather['Min.TemperatureF'].astype(int)
 weather_per_day = ks.from_pandas(weather)
 weather_per_day.to_csv()
+
 sc.stop()
