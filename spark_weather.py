@@ -11,12 +11,12 @@ from datetime import datetime
 
 sc = SparkContext(master = 'local[2]') #add these lines in order to work with spark and set the context where we will work
 
-w1 = pd.read_csv('/Weather/weather01.txt', delim_whitespace = True) #read the external .txt files using pandas library. These files have whitespaces as delimeter.
-w2 = pd.read_csv('/Weather/weather02.txt', delim_whitespace = True)
-w3 = pd.read_csv('/Weather/weather03.txt', delim_whitespace = True)
-w4 = pd.read_csv('/Weather/weather04.txt', delim_whitespace = True)
-w5 = pd.read_csv('/Weather/weather05.txt', delim_whitespace = True)
-w6 = pd.read_csv('/Weather/weather06.txt', delim_whitespace = True)
+w1 = pd.read_csv('/home/alejandro/Documents/git-repositories/spark_weather/Weather/weather01.txt', delim_whitespace = True) #read the external .txt files using pandas library. These files have whitespaces as delimeter.
+w2 = pd.read_csv('/home/alejandro/Documents/git-repositories/spark_weather/Weather/weather02.txt', delim_whitespace = True)
+w3 = pd.read_csv('/home/alejandro/Documents/git-repositories/spark_weather/Weather/weather03.txt', delim_whitespace = True)
+w4 = pd.read_csv('/home/alejandro/Documents/git-repositories/spark_weather/Weather/weather04.txt', delim_whitespace = True)
+w5 = pd.read_csv('/home/alejandro/Documents/git-repositories/spark_weather/Weather/weather05.txt', delim_whitespace = True)
+w6 = pd.read_csv('/home/alejandro/Documents/git-repositories/spark_weather/Weather/weather06.txt', delim_whitespace = True)
 weather_concat = pd.concat([w1, w2, w3, w4, w5, w6], axis=1) #concatenate the files into one single dataframe and concatenates within columns
 weather_concat = weather_concat.reset_index(drop=True) #reset the indexes by eliminating them
 weather_no_x = weather_concat.drop('X', axis=1) #eliminates the Xs from the columns 
